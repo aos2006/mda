@@ -10,3 +10,12 @@ services:
     environment:
       POSTGRES_PASSWORD: 102938
       POSTGRES_DB: db
+  web:
+    build: .
+    command: python3 ./mda/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
