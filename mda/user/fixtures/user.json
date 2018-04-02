@@ -1,0 +1,16 @@
+[
+  {
+    "model": "user.UserSeller",
+    "pk": 1,
+    "fields": {
+      "user_id": "1"
+    }
+  },
+  {
+    "model": "user.UserSeller",
+    "pk": 1,
+    "fields": {
+      "user_id": "2"
+    }
+  }
+]

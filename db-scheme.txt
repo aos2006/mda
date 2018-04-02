@@ -1,0 +1,61 @@
+1) Сущности
+Товары
+Заказы
+Клиенты -> Продавцы и Покупатели
+
+
+
+
+Добавлять в избранное может
+1) Покупатель(если авторизован)
+2) Анонимный пользователь(в течении сессии)
+
+Вопросы
+1) Как засчитывать просмотр товара ? (Или по лайку или по переходу или отметить в избранном)
+
+
+У продавца должно отображаться
+1) Кол-во купленных его товаров
+2) Кол-во просмотренных его товаров
+
+Покупатель или анонимный пользователь может
+Схема просмотра -- покупатель может поставить лайк или перейти в карточку товара
+
+Ответы
+Мы контролируем
+Цвета категории
+
+Тэги можно добавлять динамически
+1) Как засчитывать просмотр товара ? (Или по лайку или по переходу или отметить в избранном)
+
+
+Отслеживать лайки - по юзер id
+
+
+
+
+
+
+
+
+
+
+
+
+
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    name = models.CharField(max_length=20)
+    test = models.CharField(max_length=20)
+    social = models.CharField(max_length=20)
+    brest = models.CharField(max_length=20)
+# Create your models here.
+
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import User
+
+admin.site.register(User, UserAdmin)
+# Register your models here.
